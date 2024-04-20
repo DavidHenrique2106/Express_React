@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react'; 
-
 import { Card } from 'antd';
 import { Button, Flex } from 'antd';
+
 
 const App = () => {
   const [nome, setNome] = useState();
@@ -51,9 +51,7 @@ const App = () => {
   return (
 
     <div>
-
       <h1 style={{textAlign: 'center', color: 'gold', }}>Dyani Modas!!</h1>
-
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       <Card
         title="Cadastro de Clientes"
@@ -78,15 +76,16 @@ const App = () => {
         <Flex gap="small" wrap="wrap" style={{position: 'relative', top: '20px',}}>
     <Button type="primary" onClick={handleEnviar}>Enviar</Button>
         </Flex>
-
-      
       </Card>
     </div>
     </div>
   );
+  
 }
 
 
 
 
+
 export default App;
+ 
