@@ -21,6 +21,7 @@ const App = () => {
     if (!nome || !rg || !cpf || !nascimento || !email || !tel || !insta || !descri || !valor || !datacompra || !pagamento) {
       toast.error('Preencha todos os campos!');
     } else {
+      ('Informações enviadas!')
       console.log({
         nome,
         rg,
@@ -35,7 +36,6 @@ const App = () => {
         pagamento
       });
       toast.success('Informações enviadas!');
-      // Limpar campos
       setNome('');
       setRg('');
       setCpf('');
