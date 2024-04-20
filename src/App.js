@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Card } from 'antd';
-import { Button, Flex } from 'antd';
+import { Card, Button, Flex } from 'antd';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -21,7 +20,7 @@ const App = () => {
     if (!nome || !rg || !cpf || !nascimento || !email || !tel || !insta || !descri || !valor || !datacompra || !pagamento) {
       toast.error('Preencha todos os campos!');
     } else {
-      ('Informações enviadas!')
+      toast.success('Informações enviadas!');
       console.log({
         nome,
         rg,
@@ -35,7 +34,6 @@ const App = () => {
         datacompra,
         pagamento
       });
-      toast.success('Informações enviadas!');
       setNome('');
       setRg('');
       setCpf('');
@@ -53,7 +51,7 @@ const App = () => {
   return (
     <div>
       <ToastContainer />
-      <h1 style={{textAlign: 'center', color: 'gold'}}>Dyani Modas!!</h1>
+      <h1 style={{ textAlign: 'center', color: 'gold' }}>Dyani Modas!!</h1>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         <Card
           title="Cadastro de Clientes"
