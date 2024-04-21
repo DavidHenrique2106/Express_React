@@ -2,10 +2,10 @@ import React from 'react'
 
 const Devedor = () => {
   return (
-    <div className="Devedor">
-        <h1> teste 2 </h1>
+    <div className="devedor">
+        <h1>Hello devedor!</h1>
     </div>
-)
+  )
 }
 
 export default Devedor

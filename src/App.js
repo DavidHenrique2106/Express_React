@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { Card, Button, Flex } from 'antd';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Client from './router/Client';
-import Devedor from './router/Devedor';
+import { Link } from 'react-router-dom'; 
+
 
 const App = () => {
   const [nome, setNome] = useState('');
@@ -54,14 +52,23 @@ const App = () => {
 
   return (
     <div>
+
+
       <ToastContainer />
+
+      <div className='router' style={{ textAlign: 'center', marginTop: '20px' }}>
+        <Link style={{color: 'black'}} to="/client">Clientes!</Link>{' '}
+        <Link to="/devedor">Devedores</Link>
+      </div>
+
       <h1 style={{ textAlign: 'center', color: 'gold' }}>Dyani Modas!!</h1>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         <Card
           title="Cadastro de Clientes"
           bordered={false}
-          style={{ width: 300, border: '2px solid #000' }}
+          style={{ width: 300, border: '2px solid #000', top: '-85px' }}
         >
+
           <input type="text" placeholder='Nome' value={nome} onChange={(e) => setNome(e.target.value)} />
           <input type="number" placeholder='RG' value={rg} onChange={(e) => setRg(e.target.value)} />
           <input type="number" placeholder='CPF' value={cpf} onChange={(e) => setCpf(e.target.value)} />

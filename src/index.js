@@ -4,10 +4,40 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import Client from './routes/Client';
+import Devedor from './routes/Devedor';
+
+
+
+
+
+const router = createBrowserRouter ([
+
+  {
+    path: "/",
+    element: <App/>
+  },
+
+  {
+    path: "/client",
+    element: <Client />
+  },
+
+  {
+    path: "/devedor",
+    element : <Devedor />
+  },
+
+
+])
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
