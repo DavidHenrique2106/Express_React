@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { Card, Button, Flex } from 'antd';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Client from './router/Client';
+import Devedor from './router/Devedor';
 
 const App = () => {
   const [nome, setNome] = useState('');
