@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, Button, Flex } from 'antd';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom'; 
+import Navbar from './components/Navbar';
 
 
 const App = () => {
@@ -56,9 +56,8 @@ const App = () => {
 
       <ToastContainer />
 
-      <div className='router' style={{ textAlign: 'center', marginTop: '20px' }}>
-        <Link style={{color: 'black'}} to="/client">Clientes!</Link>{' '}
-        <Link to="/devedor">Devedores</Link>
+      <div className="Navbar">
+        <Navbar />
       </div>
 
       <h1 style={{ textAlign: 'center', color: 'gold' }}>Dyani Modas!!</h1>

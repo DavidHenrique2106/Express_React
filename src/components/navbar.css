@@ -1,0 +1,26 @@
+.Navbar {
+    background-color: gold; 
+    width: 200px; 
+    height: 100vh; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    display: flex; 
+    flex-direction: column; 
+  }
+  
+  .devedor, .clientes {
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  .devedor-link, .clientes-link {
+    color: black; 
+   
+  }
+  
+  .devedor:hover, .clientes:hover {
+    color: white; 
+  }
+  
+  
