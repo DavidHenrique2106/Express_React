@@ -1,16 +1,18 @@
 import React from 'react'
-import { Button, Flex } from 'antd';
+import {  Button, Flex } from 'antd';
 
 const Client = () => {
   return (
-    <div className="client" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        <h1>Aqui estarão todos os clientes cadastrados da página principal</h1>
 
-        <Flex gap="small" wrap="wrap" style={{ marginTop: '20px' }}>
+    <div className="client">
+        <h1>Aqui estará todos os clientes cadastrados da pag principal</h1>
+
+        <Flex gap="small" wrap="wrap" style={{ position: 'relative', top: '20px', textAlign: 'center', }}>
             <Button type="primary">Mostrar clientes!</Button>
-        </Flex>
+          </Flex>
     </div>
-  )
+
+    )
 }
 
 export default Client

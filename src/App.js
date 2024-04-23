@@ -4,7 +4,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar';
 
-
 const App = () => {
   const [nome, setNome] = useState('');
   const [rg, setRg] = useState('');
@@ -22,8 +21,8 @@ const App = () => {
     if (!nome || !rg || !cpf || !nascimento || !email || !tel || !insta || !descri || !valor || !datacompra || !pagamento) {
       toast.error('Preencha todos os campos!');
     } else {
-      toast.success('Informações enviadas!');
-      console.log({
+
+      console.log('Dados enviados para o console:', {
         nome,
         rg,
         cpf,
@@ -36,6 +35,7 @@ const App = () => {
         datacompra,
         pagamento
       });
+
       setNome('');
       setRg('');
       setCpf('');
@@ -52,14 +52,10 @@ const App = () => {
 
   return (
     <div>
-
-
       <ToastContainer />
-
       <div className="Navbar">
         <Navbar />
       </div>
-
       <h1 style={{ textAlign: 'center', color: 'gold' }}>Dyani Modas!!</h1>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         <Card
@@ -67,7 +63,6 @@ const App = () => {
           bordered={false}
           style={{ width: 300, border: '2px solid #000', top: '-85px' }}
         >
-
           <input type="text" placeholder='Nome' value={nome} onChange={(e) => setNome(e.target.value)} />
           <input type="number" placeholder='RG' value={rg} onChange={(e) => setRg(e.target.value)} />
           <input type="number" placeholder='CPF' value={cpf} onChange={(e) => setCpf(e.target.value)} />
@@ -79,7 +74,6 @@ const App = () => {
           <input type="number" placeholder='Valor da compra' value={valor} onChange={(e) => setValor(e.target.value)} />
           <input type="datetime-local" placeholder='Data da compra' value={datacompra} onChange={(e) => setDatacompra(e.target.value)} />
           <input type="text" placeholder='Forma pagamento' value={pagamento} onChange={(e) => setPagamento(e.target.value)} />
-
           <Flex gap="small" wrap="wrap" style={{ position: 'relative', top: '20px' }}>
             <Button type="primary" onClick={handleEnviar}>Enviar</Button>
           </Flex>
