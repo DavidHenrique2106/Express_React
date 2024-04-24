@@ -3,6 +3,8 @@ import { Card, Button, Flex } from 'antd';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar';
+import ClientModal from './components/ClientModal'; 
+
 
 const App = () => {
   const [nome, setNome] = useState('');
@@ -16,39 +18,45 @@ const App = () => {
   const [valor, setValor] = useState('');
   const [datacompra, setDatacompra] = useState('');
   const [pagamento, setPagamento] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   const handleEnviar = () => {
     if (!nome || !rg || !cpf || !nascimento || !email || !tel || !insta || !descri || !valor || !datacompra || !pagamento) {
       toast.error('Preencha todos os campos!');
     } else {
-      toast.success('Informações enviadas!')
-
-      console.log('Dados enviados para o console:', {
-        nome,
-        rg,
-        cpf,
-        nascimento,
-        email,
-        tel,
-        insta,
-        descri,
-        valor,
-        datacompra,
-        pagamento
-      });
-
-      setNome('');
-      setRg('');
-      setCpf('');
-      setNascimento('');
-      setEmail('');
-      setTel('');
-      setInsta('');
-      setDescri('');
-      setValor('');
-      setDatacompra('');
-      setPagamento('');
+      setIsModalOpen(true);
     }
+  };
+
+  const handleModalSubmit = (opcaoPagamento) => {
+    console.log('Dados enviados para o console:', {
+      nome,
+      rg,
+      cpf,
+      nascimento,
+      email,
+      tel,
+      insta,
+      descri,
+      valor,
+      datacompra,
+      pagamento: opcaoPagamento,
+    });
+
+    toast.success('Informações enviadas com sucesso!');
+
+    setIsModalOpen(false);
+    setNome('');
+    setRg('');
+    setCpf('');
+    setNascimento('');
+    setEmail('');
+    setTel('');
+    setInsta('');
+    setDescri('');
+    setValor('');
+    setDatacompra('');
+    setPagamento('');
   };
 
   return (
@@ -74,12 +82,17 @@ const App = () => {
           <input type="text" placeholder='Descrição compra' value={descri} onChange={(e) => setDescri(e.target.value)} />
           <input type="number" placeholder='Valor da compra' value={valor} onChange={(e) => setValor(e.target.value)} />
           <input type="datetime-local" placeholder='Data da compra' value={datacompra} onChange={(e) => setDatacompra(e.target.value)} />
-          <input type="text" placeholder='Forma pagamento' value={pagamento} onChange={(e) => setPagamento(e.target.value)} />
+          <input type="text" placeholder='Pagamento' value={pagamento} onChange={(e) => setPagamento(e.target.value)} />
           <Flex gap="small" wrap="wrap" style={{ position: 'relative', top: '20px' }}>
             <Button type="primary" onClick={handleEnviar}>Enviar</Button>
           </Flex>
         </Card>
       </div>
+      <ClientModal
+        visible={isModalOpen}
+        onCancel={() => setIsModalOpen(false)}
+        onSubmit={handleModalSubmit}
+      />
     </div>
   );
 };
